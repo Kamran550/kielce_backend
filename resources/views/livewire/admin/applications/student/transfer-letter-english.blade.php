@@ -440,8 +440,8 @@
         <table class="header-table">
             <tr>
                 <td style="width: 38%;">
-                    <p class="uni-name navy">UNIWERSYTET RADOMSKI</p>
-                    <p class="uni-name-sub navy">RADOM UNIVERSITY</p>
+                    <p class="uni-name navy">UNIWERSYTET KIELCE</p>
+                    <p class="uni-name-sub navy">KIELCE UNIVERSITY</p>
                 </td>
                 <td class="header-vdivider" style="width: 1%;">
                     <div class="header-vdivider-inner"></div>
@@ -449,9 +449,9 @@
                 <td style="width: 34%;">
                     <div class="office-block">
                         <div class="office-title navy">Biuro Spraw Studenckich / Student Affairs Office</div>
-                        Radom, Poland <br>
+                        KIELCE, Poland <br>
                         Tel: +48 73 947 16 22<br>
-                        Email: admission@radomuniversity.pl<br>
+                        Email: admission@kielceuniversity.pl<br>
                     </div>
                 </td>
                 <td class="header-verify-cell" style="width: 28%;">
@@ -509,7 +509,7 @@
                 <td class="arrow-cell">→</td>
                 <td class="to-cell">
                     <div class="transfer-label">TO / DO UCZELNI</div>
-                    <div class="transfer-value">Uniwersytet Radomski / Radom University</div>
+                    <div class="transfer-value">Uniwersytet KIELCE / KIELCE University</div>
                 </td>
             </tr>
         </table>
@@ -561,8 +561,8 @@
             </tr>
             <tr>
                 <td class="label-cell">
-                    Planowany semestr rozpoczęcia studiów w Radom University / Planned Semester of
-                    Enrollment at Radom University
+                    Planowany semestr rozpoczęcia studiów w KIELCE University / Planned Semester of
+                    Enrollment at KIELCE University
                 </td>
                 <td class="value-cell">Semestr zimowy {{ $startYear }}/{{ $endYear }} (październik
                     {{ $startYear }}) / Winter Semester {{ $startYear }}/{{ $endYear }} (October
@@ -573,12 +573,12 @@
         <table class="closing-columns">
             <tr>
                 <td>
-                    Zaświadczenie zostało wydane na prośbę studenta w celu przedłożenia w Radom University oraz do
+                    Zaświadczenie zostało wydane na prośbę studenta w celu przedłożenia w KIELCE University oraz do
                     innych
                     instytucji wymagających potwierdzenia zamiaru przeniesienia.
                 </td>
                 <td class="en-col">
-                    This certificate is issued at the request of the student for submission to Radom University and any
+                    This certificate is issued at the request of the student for submission to KIELCE University and any
                     other institution requiring confirmation of the transfer intention.
                 </td>
             </tr>
@@ -598,7 +598,7 @@
                             <div class="e-sign-badge">Podpis elektroniczny / E-Signed</div>
                             <div class="e-sign-name">Michał Kowalski</div>
                             <div class="e-sign-title">Dyrektor Działu Spraw Studenckich / Director of Student Affairs</div>
-                            <div class="e-sign-title">Uniwersytet Radomski / Radom University</div>
+                            <div class="e-sign-title">Uniwersytet KIELCE / KIELCE University</div>
                         </div>
                     </td>
                 </tr>

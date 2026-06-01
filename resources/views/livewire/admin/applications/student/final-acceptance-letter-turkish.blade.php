@@ -26,7 +26,7 @@
 
         /* Watermark */
         body::before {
-            content: 'Radom University';
+            content: 'KIELCE University';
             position: fixed;
             top: 50%;
             left: 50%;
@@ -379,13 +379,13 @@
             <tr>
                 <td class="logo-cell">
                     <div class="brand-wordmark-compact">
-                        <span class="brand-wordmark-primary">Radom</span>
+                        <span class="brand-wordmark-primary">KIELCE</span>
                         <span class="brand-wordmark-secondary">University</span>
                     </div>
                 </td>
                 <td class="title-cell">
                     <div class="university-name">
-                        RADOM UNIVERSITY
+                        KIELCE UNIVERSITY
                     </div>
                     <div class="department-name">
                         Öğrenci İşleri Daire Başkanlığı
@@ -540,7 +540,7 @@
 
     <!-- Signature + Stamp -->
     @php
-        $stampPath = public_path('images/radom-möhür.png');
+        $stampPath = public_path('images/kielce-möhür.png');
         $stampData = file_exists($stampPath) ? base64_encode(file_get_contents($stampPath)) : '';
     @endphp
     <table class="signature-stamp-table">
@@ -550,7 +550,7 @@
                     <img
                         class="sig-stamp-overlay"
                         src="data:image/png;base64,{{ $stampData }}"
-                        alt="RADOM Möhür"
+                        alt="KIELCE Möhür"
                     >
                 @endif
                 <div class="sig-name">Prof. Dr. hab. Tomasz Żelazowski-Krępski</div>
@@ -595,12 +595,12 @@
 
         <!-- Address Block -->
         <div class="address-block">
-            <p>Aleja Józefa Piłsudskiego 35, 09-407 Płock / Poland [ RADOM ]</p>
+            <p>Aleja Józefa Piłsudskiego 35, 09-407 Płock / Poland [ KIELCE ]</p>
             <p style="margin-top: 3px;">
                 <strong>Tel:</strong>+48579277493
             </p>
             <p>
-                <strong>e-mail:</strong> admission@radomuniversity.pl | rectorate@radomuniversity.pl |
+                <strong>e-mail:</strong> admission@kielceuniversity.pl | rectorate@kielceuniversity.pl |
             </p>
         </div>
     </div>

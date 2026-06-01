@@ -6,7 +6,7 @@
         <!-- Logo -->
         <div class="px-4 py-4 border-b border-[#1E567D] flex items-center justify-between">
             <div class="flex flex-col leading-tight">
-                <span class="font-serif text-xl font-bold tracking-[0.18em] text-white">Radom</span>
+                <span class="font-serif text-xl font-bold tracking-[0.18em] text-white">KIELCE</span>
                 <span class="text-[10px] font-light tracking-[0.38em] text-[#9FD3C7] uppercase">University</span>
             </div>
 

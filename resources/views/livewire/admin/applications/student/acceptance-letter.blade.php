@@ -274,7 +274,7 @@
         $studyLangLabel = $student->study_language === 'en' ? 'English' : 'Turkish';
         $citizenship = $student->nationality ?: ($student->country ?? 'N/A');
         $dobFormatted = $student->date_of_birth ? $student->date_of_birth->format('j F Y') : 'N/A';
-        $refNo = $student->application_number ?? ('RADOM/' . $student->id);
+        $refNo = $student->application_number ?? ('KIELCE/' . $student->id);
         $fullName = trim(($student->first_name ?? '') . ' ' . ($student->last_name ?? ''));
         $studyLevelLabel = $student->application->program?->degree?->name ?? 'N/A';
         $modeOfStudy = 'Full-time';
@@ -299,14 +299,14 @@
     <table class="header-table">
         <tr>
             <td style="width: 52%;">
-                <div class="uni-serif navy">RADOM UNIVERSITY</div>
+                <div class="uni-serif navy">KIELC UNIVERSITY</div>
                 <p class="uni-sub">International Admissions Office</p>
             </td>
             <td style="width: 48%;">
                 <div class="contact-block">
-                    <div>Jacka Malczewskiego 24, 26-600 Radom, Poland</div>
+                    <div>Jacka Malczewskiego 24, 26-600 KIELCE, Poland</div>
                     <div>Tel: +48 73 947 16 22</div>
-                    <div>E-mail: admissions@radomuniversity.pl</div>
+                    <div>E-mail: admissions@kielceuniversity.pl</div>
                 </div>
             </td>
         </tr>
@@ -326,7 +326,7 @@
     <p class="greeting">Dear Applicant,</p>
     <p class="intro">
         We are pleased to inform you that, based on the evaluation of your application documents, you have been
-        conditionally accepted to Radom University for the programme detailed below.
+        conditionally accepted to KIELCE University for the programme detailed below.
     </p>
 
     <div class="section-heading">Applicant Information</div>
@@ -397,7 +397,7 @@
     </ul>
 
     <div class="highlight-box">
-        Upon successful completion of all the above conditions, you will obtain full student status at Radom
+        Upon successful completion of all the above conditions, you will obtain full student status at KIELCE
         University.
     </div>
 

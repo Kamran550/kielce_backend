@@ -72,7 +72,7 @@ class StudentApplication extends Model
      */
     public function getVerificationUrl(?string $verificationCode = null): string
     {
-        $domain = config('app.verify_domain', 'validate.radomuniversity.pl');
+        $domain = config('app.verify_domain', 'validate.kielceuniversity.pl');
         $url = "https://{$domain}";
 
         if ($verificationCode) {

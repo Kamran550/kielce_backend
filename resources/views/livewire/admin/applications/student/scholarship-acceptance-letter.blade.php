@@ -380,10 +380,10 @@
     @php
         $citizenship = $student->nationality ?: $student->country ?? 'N/A';
         $dob = $student->date_of_birth ? $student->date_of_birth->format('Y-m-d') : 'N/A';
-        $refNo = $student->application_number ?? 'RADOM/' . $student->id;
+        $refNo = $student->application_number ?? 'KIELCE/' . $student->id;
         $barcodeCode =
             trim($student->student_number ?? ($student->application_number ?? '')) ?:
-            'RADOM-' . $student->id . '-' . now()->format('Ymd');
+            'KIELCE-' . $student->id . '-' . now()->format('Ymd');
         $barcodeBase64 = '';
         try {
             $barcodePng = (new \Picqer\Barcode\BarcodeGeneratorPNG())->getBarcode(
@@ -408,7 +408,7 @@
         @endif
     </div>
 
-    <div class="university-name">Radom University</div>
+    <div class="university-name">Kielce University</div>
     <div class="document-title">Conditional Scholarship Acceptance Letter</div>
 
     <div class="applicant-lines">
@@ -429,9 +429,9 @@
             Congratulations!
         </p>
         <p>
-            Your application to RADOM UNIVERSITY for the
+            Your application to KIELCE UNIVERSITY for the
             {{ now()->format('Y') }}-{{ now()->addYear()->format('Y') }} academic year Fall semester has been
-            successfully approved. We are excited for you to be a member of the RADOM UNIVERSITY and to join a
+            successfully approved. We are excited for you to be a member of the KIELCE UNIVERSITY and to join a
             dynamic and diverse student community in a place of endless opportunities. This letter is to confirm
             your conditional acceptance into
             <strong>{{ strtoupper($student->application->program?->name ?? 'N/A') }}</strong>
@@ -597,7 +597,7 @@
     <div class="content">
         <p>
             For inquiries regarding application, payment, registration, etc., please contact us at:
-            <strong>international@radomuniversity.pl</strong>
+            <strong>international@kielceuniversity.pl</strong>
         </p>
     </div>
 
@@ -644,7 +644,7 @@
         <div style="font-size: 5.5pt; line-height: 1.2; color: #555; text-align: center; margin-top: 4px;">
             <p style="margin: 1px 0;">
                 <strong>Tel:</strong> +48 579 277 493 |
-                <strong>Email:</strong> international@radomuniversity.pl |
+                <strong>Email:</strong> international@kielceuniversity.pl |
                 <strong>Address:</strong> Aleja Józefa Piłsudskiego 35, 09-407 Płock / Poland |
             </p>
         </div>

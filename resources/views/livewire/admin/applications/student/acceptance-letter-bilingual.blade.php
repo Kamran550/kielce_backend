@@ -343,7 +343,7 @@
         $studyLangLabel = 'English';
         $citizenship = $student->nationality ?: $student->country ?? 'N/A';
         $dobFormatted = $student->date_of_birth ? $student->date_of_birth->format('j F Y') : 'N/A';
-        $refNo = $student->application_number ?? 'RADOM/' . $student->id;
+        $refNo = $student->application_number ?? 'KIELCE/' . $student->id;
         $fullName = trim(($student->first_name ?? '') . ' ' . ($student->last_name ?? ''));
         $studyLevelLabel = $student->application->program?->degree?->name ?? 'N/A';
         $modeOfStudy = 'Full-time';
@@ -378,15 +378,15 @@
     <table class="header-table">
         <tr>
             <td style="width: 52%;">
-                <div class="uni-pl navy">UNIWERSYTET RADOMSKI</div>
-                <div class="uni-en navy">RADOM UNIVERSITY</div>
+                <div class="uni-pl navy">UNIWERSYTET KIELCE</div>
+                <div class="uni-en navy">KIELCE UNIVERSITY</div>
                 <p class="uni-sub">Biuro Rekrutacji Międzynarodowej / International Admissions Office</p>
             </td>
             <td style="width: 48%;">
                 <div class="contact-block">
                     <div>Tel: +48 73 947 16 22</div>
-                    <div>Radom, Poland</div>
-                    <div>E-mail: admissions@radomuniversity.pl</div>
+                    <div>KIELCE, Poland</div>
+                    <div>E-mail: admissions@kielceuniversity.pl</div>
                 </div>
             </td>
         </tr>
@@ -411,11 +411,11 @@
 
     <p class="intro-pl">
         Z przyjemnością informujemy, że po rozpatrzeniu dokumentów rekrutacyjnych został(a) Pan(i) przyjęty(a)
-        warunkowo na Uniwersytecie Radomskim na program studiów określony poniżej.
+        warunkowo na Uniwersytecie KIELCE na program studiów określony poniżej.
     </p>
     <p class="intro-en">
         We are pleased to inform you that, based on the evaluation of your application documents, you have been
-        conditionally accepted to Radom University for the programme detailed below.
+        conditionally accepted to KIELCE University for the programme detailed below.
     </p>
 
     <div class="section-heading">Dane kandydata / Applicant Information</div>
@@ -499,8 +499,8 @@
     </table>
 
     <div class="highlight-box">
-        Po spełnieniu powyższych warunków uzyska Pan(i) pełny status studenta Uniwersytetu Radomskiego.<br />
-        Upon successful completion of all the above conditions, you will obtain full student status at Radom
+        Po spełnieniu powyższych warunków uzyska Pan(i) pełny status studenta Uniwersytetu KIELCE.<br />
+        Upon successful completion of all the above conditions, you will obtain full student status at KIELCE
         University.
     </div>
 

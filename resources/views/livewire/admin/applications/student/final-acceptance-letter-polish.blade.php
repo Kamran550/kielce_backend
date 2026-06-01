@@ -360,7 +360,7 @@
             }
         }
 
-        $stampPath = public_path('images/radom-möhür.png');
+        $stampPath = public_path('images/kielce-möhür.png');
         $stampData = file_exists($stampPath) ? base64_encode(file_get_contents($stampPath)) : '';
 
         $verificationCodeForUrl = $verificationCode ?? null;
@@ -370,7 +370,7 @@
             ->size(70)
             ->generate($verificationUrl);
         $qrCodeBase64 = base64_encode($qrCode);
-        $barcodeCode = trim($student->student_number ?? ($student->application_number ?? '')) ?: 'RADOM-' . $student->id . '-' . now()->format('Ymd');
+        $barcodeCode = trim($student->student_number ?? ($student->application_number ?? '')) ?: 'KIELCE-' . $student->id . '-' . now()->format('Ymd');
         $barcodeBase64 = '';
         try {
             $barcodePng = (new \Picqer\Barcode\BarcodeGeneratorPNG())->getBarcode(
@@ -391,7 +391,7 @@
 
         <div class="header">
             <div class="header-left">
-                <div class="brand-name">RADOM UNIVERSITY</div>
+                <div class="brand-name">KIELCE UNIVERSITY</div>
                 <div class="brand-sub">Biuro spraw studenckich</div>
             </div>
             <div class="header-right">
@@ -446,7 +446,7 @@
         </div>
 
         <div class="statement">
-            <p>Osoba wskazana w niniejszym dokumencie jest zarejestrowanym studentem RADOM UNIVERSITY i posiada aktywny status studenta.</p>
+            <p>Osoba wskazana w niniejszym dokumencie jest zarejestrowanym studentem KIELCE UNIVERSITY i posiada aktywny status studenta.</p>
             <p>Planowany laczny okres trwania programu wynosi {{ $duration }} {{ $durationPl }}. Aktualna rejestracja dotyczy okresu akademickiego {{ $startYear }}-{{ $endYear }}.</p>
             <p>Zgodnie z regulaminem studiow uczelni student ma obowiazek realizowac wymagania programowe, uczestniczyc w zajeciach oraz przystepowac do zaliczen i egzaminow zgodnie z harmonogramem.</p>
             <p>Niniejsze zaswiadczenie wydano na wniosek osoby zainteresowanej wyłącznie w celu potwierdzenia statusu studenta.</p>
@@ -475,7 +475,7 @@
             <div class="address">
                 <p>Aleja Jozefa Pilsudskiego 35, 09-407 Plock, Poland</p>
                 <p>Tel: +48 73 947 16 22</p>
-                <p>E-mail: admission@radomuniversity.pl | rectorate@radomuniversity.pl</p>
+                <p>E-mail: admission@kielceuniversity.pl | rectorate@kielceuniversity.pl</p>
             </div>
         </div>
     </div>

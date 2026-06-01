@@ -331,7 +331,7 @@
             }
         }
 
-        $stampPath = public_path('images/radom-möhür.png');
+        $stampPath = public_path('images/kielce-möhür.png');
         $stampData = file_exists($stampPath) ? base64_encode(file_get_contents($stampPath)) : '';
 
         $verificationCodeForUrl = $verificationCode ?? null;
@@ -346,7 +346,7 @@
 
         <div class="header">
             <div class="header-left">
-                <div class="brand-name">RADOM UNIVERSITY</div>
+                <div class="brand-name">KIELCE UNIVERSITY</div>
                 <div class="brand-sub">Student Affairs Department</div>
             </div>
             <div class="header-right">
@@ -408,7 +408,7 @@
         </div>
 
         <div class="statement">
-            <p>The person identified in this document is a registered student of RADOM UNIVERSITY and currently holds
+            <p>The person identified in this document is a registered student of KIELCE UNIVERSITY and currently holds
                 active student status.</p>
             <p>The planned total duration of the program is {{ $duration }} years. Current registration applies for
                 the {{ $academicYear }} period.</p>
@@ -442,8 +442,8 @@
             <div class="address">
                 <p>Aleja Jozefa Pilsudskiego 35, 09-407 Plock, Poland</p>
                 <p>Tel: +48 73 947 16 22</p>
-                <p>Radom, Poland</p>
-                <p>E-mail: admission@radomuniversity.pl | rectorate@radomuniversity.pl</p>
+                <p>KIELCE, Poland</p>
+                <p>E-mail: admission@kielceuniversity.pl | rectorate@kielceuniversity.pl</p>
             </div>
         </div>
     </div>

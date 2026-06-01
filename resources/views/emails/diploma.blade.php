@@ -13,7 +13,7 @@
                 🎓 Congratulations!
             </h1>
             <p style="color: #f0d9d9; margin: 10px 0 0 0; font-size: 14px;">
-                RADOM UNİVERSİTY
+                KIELCE UNİVERSİTY
             </p>
         </div>
         
@@ -25,7 +25,7 @@
             </p>
             
             <p style="font-size: 15px; margin-bottom: 20px;">
-                We are delighted to inform you that your diploma certificate has been officially issued by the RADOM UNİVERSİTY of Science and Technology.
+                We are delighted to inform you that your diploma certificate has been officially issued by the KIELCE UNİVERSİTY of Science and Technology.
             </p>
             
             <!-- Program Info Box -->
@@ -85,7 +85,7 @@
                     Best regards,
                 </p>
                 <p style="margin: 5px 0 0 0; font-size: 15px; font-weight: 600; color: #8B0000;">
-                    RADOM University
+                    KIELCE University
                 </p>
                 <p style="margin: 5px 0 0 0; font-size: 13px; color: #888;">
                     Office of the Registrar
@@ -96,11 +96,11 @@
         <!-- Footer -->
         <div style="text-align: center; padding: 20px; font-size: 12px; color: #888;">
             <p style="margin: 0;">
-                RADOM University<br>
+                KIELCE University<br>
                 Płock, Poland
             </p>
             <p style="margin: 10px 0 0 0;">
-                <a href="https://radomuniversity.pl" style="color: #8B0000; text-decoration: none;">www.radomuniversity.pl</a>
+                <a href="https://kielceuniversity.pl" style="color: #8B0000; text-decoration: none;">www.kielceuniversity.pl</a>
             </p>
         </div>
     </div>

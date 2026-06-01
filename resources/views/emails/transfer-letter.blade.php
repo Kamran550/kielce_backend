@@ -55,8 +55,8 @@
                 İletişim Bilgileri:
             </h3>
             <p style="margin: 5px 0; font-size: 14px;">
-                <strong>E-posta:</strong> <a href="mailto:international@radomuniversity.pl"
-                    style="color: #007bff; text-decoration: none;">international@radomuniversity.pl</a>
+                <strong>E-posta:</strong> <a href="mailto:international@kielceuniversity.pl"
+                    style="color: #007bff; text-decoration: none;">international@kielceuniversity.pl</a>
             </p>
             <p style="margin: 5px 0; font-size: 14px;">
                 <strong>Telefon:</strong> +48 579 277 493

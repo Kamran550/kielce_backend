@@ -8,10 +8,10 @@ return [
     'allowed_origins' => [
         'http://localhost:3000',
         'http://127.0.0.1:3000',
-        'https://radomuniversity.pl',
-        'https://admin.radomuniversity.pl',
-        'https://teacher.radomuniversity.pl',
-        'https://student.radomuniversity.pl',
+        'https://kielceuniversity.pl',
+        'https://admin.kielceuniversity.pl',
+        'https://teacher.kielceuniversity.pl',
+        'https://student.kielceuniversity.pl',
     ],
 
     'allowed_origins_patterns' => [],

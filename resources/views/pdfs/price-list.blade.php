@@ -244,7 +244,7 @@
     <div class="header clearfix">
         <div class="logo-container">
             <div class="brand-wordmark-header-pdf">
-                <span class="bwh-primary">Radom</span>
+                <span class="bwh-primary">KIELCE</span>
                 <span class="bwh-secondary">University</span>
             </div>
         </div>

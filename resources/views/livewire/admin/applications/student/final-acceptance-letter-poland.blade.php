@@ -447,15 +447,15 @@
     <table class="header-table">
         <tr>
             <td style="width: 55%;">
-                <div class="uni-pl navy">UNIWERSYTET RADOMSKI</div>
-                <div class="uni-en navy">RADOM UNIVERSITY</div>
+                <div class="uni-pl navy">UNIWERSYTET KIELCE</div>
+                <div class="uni-en navy">KIELCE UNIVERSITY</div>
                 <p class="uni-sub">Biuro Spraw Studenckich / Student Affairs Office</p>
             </td>
             <td style="width: 45%;">
                 <div class="contact-block">
                     <div>Tel: +48 73 947 16 22</div>
-                    <div>Radom, Poland</div>
-                    <div>E-mail: admission@radomuniversity.pl</div>
+                    <div>KIELCE, Poland</div>
+                    <div>E-mail: admission@kielceuniversity.pl</div>
                 </div>
             </td>
         </tr>
@@ -619,7 +619,7 @@
     </div>{{-- .page-content --}}
 
     @php
-        $stampPath = public_path('images/radom-möhür.png');
+        $stampPath = public_path('images/kielce-möhür.png');
         $stampData = file_exists($stampPath) ? base64_encode(file_get_contents($stampPath)) : '';
 
         $signaturePath = public_path('images/imza.png');
@@ -675,8 +675,8 @@
         </div>
 
         <div class="footer-line">
-            Radom, Poland &nbsp;|&nbsp; Tel: +48 73 947 16 22 &nbsp;|&nbsp; E-mail:
-            admission@radomuniversity.pl
+            KIELCE, Poland &nbsp;|&nbsp; Tel: +48 73 947 16 22 &nbsp;|&nbsp; E-mail:
+            admission@kielceuniversity.pl
         </div>
     </div>
 

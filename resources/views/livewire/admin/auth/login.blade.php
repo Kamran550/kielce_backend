@@ -4,7 +4,7 @@
         <div class="text-center">
             <div class="flex justify-center mb-6">
                 <div class="bg-cyan-700 px-8 py-5 rounded-2xl shadow-lg text-center">
-                    <span class="block font-serif text-2xl font-bold tracking-[0.2em] text-white">Radom</span>
+                    <span class="block font-serif text-2xl font-bold tracking-[0.2em] text-white">KIELCE</span>
                     <span class="mt-1 block text-[11px] font-light tracking-[0.4em] text-cyan-100 uppercase">University</span>
                 </div>
             </div>

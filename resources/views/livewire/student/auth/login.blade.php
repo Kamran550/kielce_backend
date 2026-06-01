@@ -2,7 +2,7 @@
     <!-- Logo - Top Left -->
     <div class="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-10">
         <div class="flex flex-col leading-tight">
-            <span class="font-serif text-3xl sm:text-4xl font-bold tracking-[0.2em] text-slate-900">Radom</span>
+            <span class="font-serif text-3xl sm:text-4xl font-bold tracking-[0.2em] text-slate-900">KIELCE</span>
             <span class="text-xs font-light tracking-[0.42em] text-cyan-700 uppercase">University</span>
         </div>
     </div>

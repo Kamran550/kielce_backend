@@ -200,7 +200,7 @@
 <body>
     <!-- Background Watermark -->
     <div class="watermark" aria-hidden="true">
-        <span class="watermark-text-inner">Radom University</span>
+        <span class="watermark-text-inner">KIELCE University</span>
     </div>
 
     <!-- Header with Logo and Address -->
@@ -208,7 +208,7 @@
         {{-- Left: Wordmark --}}
         <div>
             <div class="brand-wordmark-header">
-                <span class="brand-wordmark-primary">Radom</span>
+                <span class="brand-wordmark-primary">KIELCE</span>
                 <span class="brand-wordmark-secondary">University</span>
             </div>
         </div>
@@ -216,14 +216,14 @@
         {{-- Right: Contact info + Barcode --}}
         <div class="contact-info" style="text-align: right;">
             <div>
-                <strong>E-posta:</strong> international@radomuniversity.pl<br>
+                <strong>E-posta:</strong> international@kielceuniversity.pl<br>
                 <strong>Telefon:</strong> +48 579 277 493<br>
                 <strong>Tarih:</strong> {{ now()->format('d/m/Y') }}
             </div>
 
             <div>
                 @php
-                    $barcodeCode = trim($student->student_number ?? $student->application_number ?? '') ?: ('RADOM-' . $student->id . '-' . now()->format('Ymd'));
+                    $barcodeCode = trim($student->student_number ?? $student->application_number ?? '') ?: ('KIELCE-' . $student->id . '-' . now()->format('Ymd'));
                     $barcodeBase64 = '';
                     try {
                         $barcodePng = (new \Picqer\Barcode\BarcodeGeneratorPNG())
@@ -243,7 +243,7 @@
     </div>
     <!-- Document Title -->
     <div class="document-title">
-        RADOM ÜNİVERSİTESİ<br>
+        KIELCE ÜNİVERSİTESİ<br>
         YATAY GEÇİŞ KABUL MEKTUBU
     </div>
 

@@ -259,7 +259,7 @@
         <div class="logo-container">
             <div class="university-name-container">
                 <div class="brand-wordmark">
-                    <span class="brand-wordmark-primary">Radom</span>
+                    <span class="brand-wordmark-primary">KIELCE</span>
                     <span class="brand-wordmark-secondary">University</span>
                 </div>
             </div>
@@ -392,12 +392,12 @@
                         on {{ $payment->created_at->format('d/m/Y') }} with document number
                         <strong>{{ $verificationCode }}</strong>.
                         The validity of the document can be confirmed by scanning the QR code or by document number at
-                        <strong> {{ 'https://' . config('app.verify_domain', 'validate.radomuniversity.pl') }} </strong>
+                        <strong> {{ 'https://' . config('app.verify_domain', 'validate.kielceuniversity.pl') }} </strong>
                     </div>
                 </td>
                 <td style="width: 70px; vertical-align: top;">
                     @php
-                        $verifyDomain = config('app.verify_domain', 'validate.radomuniversity.pl');
+                        $verifyDomain = config('app.verify_domain', 'validate.kielceuniversity.pl');
                         $verificationUrl = 'https://' . $verifyDomain . '/' . urlencode($verificationCode);
                         $qrCodeSvg = \SimpleSoftwareIO\QrCode\Facades\QrCode::format('svg')
                             ->size(120)
@@ -418,7 +418,7 @@
                 <td class="footer-info" style="text-align: center;">
                     <p style="margin: 5px 0;">
                         <strong>Phone:</strong> +48 579 277 493 |
-                        <strong>Email:</strong> admission@radomuniversity.pl |
+                        <strong>Email:</strong> admission@kielceuniversity.pl |
                         <strong>Address:</strong> Aleja Józefa Piłsudskiego 35,
                         09-407 Płock / Poland
                     </p>

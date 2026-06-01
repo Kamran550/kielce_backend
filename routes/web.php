@@ -3,21 +3,21 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::domain('admin.radomuniversity.pl')->group(function () {
+Route::domain('admin.kielceuniversity.pl')->group(function () {
     require base_path('routes/admin.php');
 });
 
 
-Route::domain('teacher.radomuniversity.pl')->group(function () {
+Route::domain('teacher.kielceuniversity.pl')->group(function () {
     require base_path('routes/teacher.php');
 });
 
 
-Route::domain('student.radomuniversity.pl')->group(function () {
+Route::domain('student.kielceuniversity.pl')->group(function () {
     require base_path('routes/student.php');
 });
 
 
-Route::domain('verify.radomuniversity.pl')->group(function () {
+Route::domain('verify.kielceuniversity.pl')->group(function () {
     require base_path(path: 'routes/verify.php');
 });

@@ -3,7 +3,7 @@
         <!-- Logo -->
         <div class="flex justify-center mb-8">
             <div class="text-center leading-tight">
-                <span class="block font-serif text-4xl md:text-5xl font-bold tracking-[0.2em] text-gray-900">Radom</span>
+                <span class="block font-serif text-4xl md:text-5xl font-bold tracking-[0.2em] text-gray-900">KIELCE</span>
                 <span class="mt-2 block text-sm font-light tracking-[0.42em] text-teal-700 uppercase">University</span>
             </div>
         </div>
@@ -81,7 +81,7 @@
 
         <!-- Footer -->
         <div class="mt-8 text-center text-sm text-gray-500">
-            <p>RADOM UNIVERSITY</p>
+            <p>KIELCE UNIVERSITY</p>
             <p class="mt-1">Document Verification System</p>
         </div>
     </div>

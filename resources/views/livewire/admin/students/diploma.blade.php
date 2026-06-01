@@ -445,11 +445,11 @@
             <div class="header">
                 <div class="header-content">
                     <div class="brand-wordmark-inline">
-                        <span class="brand-wordmark-primary">Radom</span>
+                        <span class="brand-wordmark-primary">KIELCE</span>
                         <span class="brand-wordmark-secondary">University</span>
                     </div>
                     <div class="university-info">
-                        <div class="university-name">RADOM UNIVERSITY</div>
+                        <div class="university-name">KIELCE UNIVERSITY</div>
                         <div class="university-subtitle">Business Eurasia Education Alliance</div>
                         <div class="countries-text">POLAND | LUXEMBOURG | TÜRKİYE</div>
                     </div>
