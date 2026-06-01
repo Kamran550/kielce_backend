@@ -1,0 +1,59 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Degree extends Model
+{
+    use HasFactory, SoftDeletes;
+    protected $fillable = [
+        'name',
+        'duration',
+        'description',
+    ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
+    /**
+     * Get the programs for the degree.
+     */
+    public function programs(): HasMany
+    {
+        return $this->hasMany(Program::class);
+    }
+
+    /**
+     * Get unique faculties connected through programs.
+     */
+    public function faculties(): BelongsToMany
+    {
+        return $this->belongsToMany(Faculty::class, 'programs', 'degree_id', 'faculty_id')->distinct();
+    }
+    public function translations()
+    {
+        return $this->hasMany(DegreeTranslation::class);
+    }
+
+    public function getName($lang = 'EN')
+    {
+        return $this->translations
+            ->where('language', strtoupper($lang))
+            ->first()
+            ->name ?? '';
+    }
+    public function getDescription($lang = 'EN')
+    {
+        return $this->translations
+            ->where('language', strtoupper($lang))
+            ->first()
+            ->description ?? '';
+    }
+}

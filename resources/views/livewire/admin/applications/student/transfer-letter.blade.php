@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatay Geçiş Kabul Mektubu - {{ $student->first_name }} {{ $student->last_name }}</title>
+    <style>
+        @page {
+            margin: 15mm 20mm;
+            size: A4;
+        }
+
+        body {
+            font-family: 'DejaVu Serif', 'Times New Roman', serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            background: white;
+            position: relative;
+            min-height: 297mm;
+        }
+
+        /* Background Watermark */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-22deg);
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.11;
+        }
+
+        .watermark-text-inner {
+            font-family: Georgia, 'DejaVu Serif', 'Times New Roman', serif;
+            font-size: 56pt;
+            font-weight: bold;
+            color: #1a2744;
+            white-space: nowrap;
+            letter-spacing: 0.06em;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 8px;
+        }
+
+        .brand-wordmark-header {
+            line-height: 1.08;
+            margin-bottom: 8px;
+        }
+
+        .brand-wordmark-header .brand-wordmark-primary {
+            display: block;
+            font-family: Georgia, 'DejaVu Serif', 'Times New Roman', serif;
+            font-size: 18pt;
+            font-weight: bold;
+            color: #1a2744;
+            letter-spacing: 0.12em;
+        }
+
+        .brand-wordmark-header .brand-wordmark-secondary {
+            display: block;
+            font-family: 'DejaVu Sans', Arial, sans-serif;
+            font-size: 9pt;
+            font-weight: normal;
+            color: #3d5a80;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .contact-info {
+            font-size: 8.5pt;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .document-title {
+            font-size: 13pt;
+            font-weight: bold;
+            text-align: center;
+            margin: 25px 0 10px 0;
+            /* text-transform: uppercase; */
+            letter-spacing: 0.5px;
+        }
+
+        .department {
+            font-size: 9pt;
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .reference-line {
+            font-size: 9pt;
+            margin: 8px 0;
+            font-style: italic;
+        }
+
+        .greeting {
+            text-align: center;
+            font-size: 10pt;
+            font-weight: bold;
+            margin: 15px 0 12px 0;
+        }
+
+        .content {
+            text-align: justify;
+            line-height: 1.6;
+            margin: 12px 0;
+            font-style: italic;
+        }
+
+        .content p {
+            margin: 10px 0;
+        }
+
+        .signature-section {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .signature-line {
+            margin: 4px 0;
+        }
+
+        .verification-footer {
+            position: absolute;
+            bottom: -5mm;
+            left: 0;
+            right: 0;
+            margin-top: 10px;
+            padding: 0;
+            padding-bottom: 10px;
+        }
+
+        .verification-pdf {
+            font-size: 7.5pt;
+            line-height: 1.35;
+            color: #000;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        .verification-pdf-title {
+            margin: 0 0 5px 0;
+            font-weight: bold;
+        }
+
+        .verification-pdf-url {
+            margin: 0 0 8px 0;
+            font-family: 'DejaVu Sans Mono', 'Courier New', monospace;
+            font-size: 7pt;
+            word-break: break-all;
+        }
+
+        .verification-pdf-layout {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0 8px 0;
+        }
+
+        .verification-pdf-qr-cell {
+            width: 72px;
+            padding: 0 10px 0 0;
+            vertical-align: top;
+        }
+
+        .verification-pdf-text-cell {
+            vertical-align: top;
+            text-align: justify;
+            font-size: 7.5pt;
+            line-height: 1.35;
+        }
+
+        .verification-pdf-text-cell p {
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Watermark -->
+    <div class="watermark" aria-hidden="true">
+        <span class="watermark-text-inner">Radom University</span>
+    </div>
+
+    <!-- Header with Logo and Address -->
+    <div class="header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 15px;">
+        {{-- Left: Wordmark --}}
+        <div>
+            <div class="brand-wordmark-header">
+                <span class="brand-wordmark-primary">Radom</span>
+                <span class="brand-wordmark-secondary">University</span>
+            </div>
+        </div>
+
+        {{-- Right: Contact info + Barcode --}}
+        <div class="contact-info" style="text-align: right;">
+            <div>
+                <strong>E-posta:</strong> international@radomuniversity.pl<br>
+                <strong>Telefon:</strong> +48 579 277 493<br>
+                <strong>Tarih:</strong> {{ now()->format('d/m/Y') }}
+            </div>
+
+            <div>
+                @php
+                    $barcodeCode = trim($student->student_number ?? $student->application_number ?? '') ?: ('RADOM-' . $student->id . '-' . now()->format('Ymd'));
+                    $barcodeBase64 = '';
+                    try {
+                        $barcodePng = (new \Picqer\Barcode\BarcodeGeneratorPNG())
+                            ->getBarcode($barcodeCode, \Picqer\Barcode\BarcodeGenerator::TYPE_CODE_128, 1, 22, [26, 39, 68]);
+                        $barcodeBase64 = base64_encode($barcodePng);
+                    } catch (\Throwable $e) {
+                        // fallback - barcode hidden
+                    }
+                @endphp
+                @if ($barcodeBase64)
+                    <img src="data:image/png;base64,{{ $barcodeBase64 }}" alt="Barcode"
+                        style="max-width: 110px; height: auto; max-height: 28px; display: block; margin-left: auto;" />
+                    <div style="font-size: 7pt; margin-top: 2px;">{{ now()->format('d/m/Y') }}</div>
+                @endif
+            </div>
+        </div>
+    </div>
+    <!-- Document Title -->
+    <div class="document-title">
+        RADOM ÜNİVERSİTESİ<br>
+        YATAY GEÇİŞ KABUL MEKTUBU
+    </div>
+
+    <div class="department">
+        Uluslararası Öğrenci İşleri Departmanı
+    </div>
+
+    <!-- Reference Information -->
+    <div class="reference-line">
+        <strong>Öğrenci No:</strong> {{ $student->student_number ?? 'N/A' }}
+    </div>
+    <div class="reference-line">
+        <strong>Pasaport No:</strong> {{ $student->passport_number ?? 'N/A' }}
+    </div>
+
+
+    <div class="reference-line">
+        <strong>Konu:</strong> Yatay Geçiş Kabulü – {{ tr_upper(text: $student->first_name) }}
+        {{ tr_upper(text: $student->last_name) }}
+    </div>
+
+    <!-- Greeting -->
+    <div class="greeting">
+        İLGİLİ MAKAMA
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <p>
+            Bu mektup, daha önce <strong>{{ $student->current_university ?: 'N/A' }}</strong>'nde kayıtlı olan
+            <strong>{{ tr_upper(text: $student->first_name) }} {{ tr_upper(text: $student->last_name) }}</strong>'in,
+            @php
+                $applicationDate = $student->application->submitted_at ?? ($student->application->created_at ?? now());
+                $startYear = $applicationDate->format('Y');
+                $endYear = $startYear + 1;
+            @endphp
+            {{ $startYear }}–{{ $endYear }} akademik yılı için Avrupa Uluslararası Barış Üniversitesi
+            bünyesinde
+            {{ tr_upper($student->application->program?->degree?->getName('TR') ?? ($student->application->program?->degree?->name ?? 'N/A')) }}
+            {{ tr_upper($student->application->program?->getName('TR') ?? ($student->application->program?->name ?? 'N/A')) }}
+            programına
+            {{ course_to_word($student->current_course) }} sınıf öğrencisi olarak resmen kabul
+            edildiğini
+            teyit etmek amacıyla düzenlenmiştir.
+        </p>
+
+        <p>
+            Öğrencinin akademik kayıtları titizlikle incelenmiş olup, nitelikleri doğrultusunda programın doğrudan
+            {{ course_to_word($student->current_course) }} yılına yerleştirilmesine karar verilmiştir.
+        </p>
+    </div>
+
+    <!-- Signature Section -->
+    <div class="signature-section">
+        <div class="signature-line">
+            Saygılarımızla,
+        </div>
+        <div class="signature-line" style="margin-top: 15px;">
+            Öğrenci İşleri
+        </div>
+        <br>
+        <div class="signature-line">
+            MAZOVYA BİLİM ve TEKNOLOJİ ÜNİVERSİTESİ
+        </div>
+    </div>
+
+    <!-- Verification Footer Section -->
+    {{-- <div class="verification-footer">
+        <!-- Verification Box with QR Code -->
+        <table class="verification-table">
+            <tr>
+                <!-- Text Box -->
+                <td style="padding-left: 10px;">
+                    <div class="verification-box">
+                        Bu belge,
+                        {{ now()->format('d/m/Y') }} tarihinde
+                        <strong>{{ strtoupper($student->first_name . ' ' . $student->last_name) }}</strong> adına
+                        <strong>{{ $verificationCode ?? tr_upper(\Illuminate\Support\Str::random(12)) }}</strong>
+                        belge numarasıyla elektronik olarak imzalanmıştır. Belgenin geçerliliği, QR kodunu tarayarak
+                        veya belge numarasını kullanarak
+                        <strong>{{ $student->getVerificationUrl() }}</strong> adresinden doğrulanabilir.
+                    </div>
+                </td>
+                <td style="width: 80px; vertical-align: top;">
+                    @php
+                        $verificationCodeForUrl = $verificationCode ?? null;
+                        $qrCode = \SimpleSoftwareIO\QrCode\Facades\QrCode::format('svg')
+                            ->size(70)
+                            ->generate($student->getVerificationUrl($verificationCodeForUrl));
+                        $qrCodeBase64 = base64_encode($qrCode);
+                    @endphp
+                    <img src="data:image/svg+xml;base64,{{ $qrCodeBase64 }}" class="qr-code" />
+                </td>
+            </tr>
+        </table>
+    </div> --}}
+
+    <div class="verification-footer">
+        @php
+            $verificationCodeForUrl = $verificationCode ?? null;
+            $verificationUrl = $student->getVerificationUrl($verificationCodeForUrl);
+            $codeForEntry = isset($digitCode) && $digitCode !== null ? trim((string) $digitCode) : '—';
+            $qrCode = \SimpleSoftwareIO\QrCode\Facades\QrCode::format('svg')
+                ->size(70)
+                ->generate($verificationUrl);
+            $qrCodeBase64 = base64_encode($qrCode);
+        @endphp
+        <div class="verification-pdf">
+            <p class="verification-pdf-title">Belgenin doğruluğunu kontrol edin:</p>
+            <p class="verification-pdf-url">{{ $verificationUrl }}</p>
+            <table class="verification-pdf-layout">
+                <tr>
+                    <td class="verification-pdf-qr-cell">
+                        <img src="data:image/svg+xml;base64,{{ $qrCodeBase64 }}" alt=""
+                            style="width: 64px; height: 64px; display: block;" />
+                    </td>
+                    <td class="verification-pdf-text-cell">
+                        <p>
+                            Belgenin doğruluğunu kontrol etmek için QR kodu tarayın veya bağlantıyı manuel açın.
+                            İstendiğinde bu 4 haneli kodu girin:
+                            <strong>{{ $codeForEntry }}</strong>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
