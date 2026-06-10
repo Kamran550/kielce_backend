@@ -7,12 +7,12 @@
 
     <title>{{ config('app.name', 'Laravel') }} - Student Panel</title>
     
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%230e7490' width='32' height='32' rx='6'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-family='Georgia,serif' font-size='17' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%231B2A4A' width='32' height='32' rx='6'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23C9A227' font-family='Georgia,serif' font-size='17' font-weight='bold'%3EK%3C/text%3E%3C/svg%3E">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body class="min-h-screen bg-[#f8f6f3] antialiased" x-data="{ sidebarOpen: false }" @keydown.escape="sidebarOpen = false">
+<body class="min-h-screen bg-surface antialiased" x-data="{ sidebarOpen: false }" @keydown.escape="sidebarOpen = false">
     
     <!-- Sidebar -->
     <div class="flex h-screen overflow-hidden">
@@ -35,19 +35,19 @@
         <div class="flex-1 flex flex-col overflow-hidden lg:ml-0">
             
             <!-- Top Bar -->
-            <header class="bg-white shadow-sm sticky top-0 z-30">
+            <header class="bg-surface-card border-b border-border sticky top-0 z-30">
                 <div class="px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
                     <div class="flex items-center gap-3 sm:gap-4">
                         <!-- Hamburger Menu (mobile only) -->
                         <button 
                             @click="sidebarOpen = true" 
-                            class="lg:hidden text-gray-600 hover:text-gray-900 focus:outline-none"
+                            class="lg:hidden text-navy-muted hover:text-navy focus:outline-none"
                         >
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                             </svg>
                         </button>
-                        <h2 class="text-lg sm:text-xl font-semibold text-gray-800">Student Panel</h2>
+                        <h2 class="text-lg sm:text-xl font-semibold text-navy">Student Panel</h2>
                     </div>
                     <div class="flex items-center space-x-2 sm:space-x-4">
                     </div>
@@ -55,7 +55,7 @@
             </header>
             
             <!-- Page Content -->
-            <main class="flex-1 overflow-y-auto bg-[#f8f6f3]">
+            <main class="flex-1 overflow-y-auto bg-surface">
                 {{ $slot }}
             </main>
             
