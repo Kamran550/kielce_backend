@@ -563,7 +563,7 @@
                 <div class="field-value">{{ $educationTypePl }} / {{ $educationTypeEn }}</div>
             </td>
             <td>
-                <div class="field-label">Rok akademicki / Academic Year:</div>
+                <div class="field-label">Przewidywany rok ukończenia studiów / Expected Graduation:</div>
                 <div class="field-value">{{ $startYear }}/{{ $endYear }}</div>
             </td>
         </tr>
