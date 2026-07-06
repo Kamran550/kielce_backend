@@ -7,7 +7,7 @@
     <title>Zaświadczenie o statusie studenta - {{ $student->first_name }} {{ $student->last_name }}</title>
     <style>
         @page {
-            margin: 7mm 8.5mm 11mm 8.5mm;
+            margin: 9mm 10mm 9mm 10mm;
             size: A4;
         }
 
@@ -18,229 +18,221 @@
         body {
             font-family: 'DejaVu Sans', Helvetica, Arial, sans-serif;
             font-size: 7pt;
-            line-height: 1.3;
-            color: #111;
+            line-height: 1.35;
+            color: #1c1c1c;
             margin: 0;
             padding: 0;
             background: #fff;
         }
 
         .page-content {
-            padding-bottom: 58mm;
+            padding-bottom: 30mm;
         }
 
         .page-bottom-fixed {
             position: fixed;
-            left: 8.5mm;
-            right: 8.5mm;
-            bottom: 6mm;
+            left: 0;
+            right: 0;
+            bottom: 0;
             width: auto;
             page-break-inside: avoid;
         }
 
-        .page-bottom-fixed .signature-block {
-            margin-bottom: 3px;
+        /* ===== OUTER FRAME ===== */
+        .outer-frame {
+            border: 1.5px solid #14532d;
+            padding: 7px 9px;
+            margin-bottom: 8px;
         }
 
-        .navy {
-            color: #1a237e;
-        }
-
-        .header-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 6px;
-        }
-
-        .header-table td {
-            vertical-align: top;
-            padding: 0;
+        /* ===== HEADER: centered card, not two-column split ===== */
+        .letterhead {
+            text-align: center;
+            border-bottom: 1px solid #cfd8cf;
+            padding-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         .uni-pl {
             font-family: 'DejaVu Serif', Georgia, serif;
-            font-size: 11pt;
+            font-size: 12.5pt;
             font-weight: bold;
-            color: #1a237e;
+            letter-spacing: 0.03em;
+            color: #14532d;
             margin: 0;
-            line-height: 1.1;
+            line-height: 1;
         }
 
         .uni-en {
             font-family: 'DejaVu Sans', sans-serif;
-            font-size: 9pt;
+            font-size: 7pt;
             font-weight: bold;
-            color: #1a237e;
-            margin: 2px 0 0 0;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #666;
+            margin: 3px 0 0 0;
         }
 
         .uni-sub {
             font-size: 6pt;
-            color: #333;
+            color: #777;
             margin: 3px 0 0 0;
-            line-height: 1.25;
         }
 
-        .contact-block {
-            text-align: right;
-            font-size: 6.5pt;
-            line-height: 1.4;
-            color: #222;
+        .contact-strip {
+            width: 100%;
+            font-size: 6.2pt;
+            color: #444;
+            text-align: center;
+            margin-top: 4px;
         }
 
-        .rule {
-            border: none;
-            border-top: 1px solid #bbb;
-            margin: 6px 0 8px 0;
+        .contact-strip span {
+            margin: 0 6px;
         }
 
+        .contact-strip .lbl {
+            color: #14532d;
+            font-weight: bold;
+        }
+
+        /* ===== TITLE: ribbon style, centered ===== */
         .doc-title {
             text-align: center;
-            margin: 0 0 8px 0;
+            margin: 2px 0 6px 0;
         }
 
         .doc-title .pl {
-            font-size: 9.25pt;
+            display: inline-block;
+            font-size: 9pt;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.03em;
-            color: #1a237e;
+            color: #fff;
+            background: #14532d;
+            padding: 4px 14px;
             margin: 0;
         }
 
         .doc-title .en {
-            font-size: 8.75pt;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            color: #1a237e;
-            margin: 2px 0 0 0;
+            font-size: 7.3pt;
+            font-style: italic;
+            color: #555;
+            margin: 3px 0 0 0;
         }
 
-        .meta-row {
-            width: 100%;
-            margin-bottom: 10px;
-            font-size: 7pt;
-        }
-
-        .meta-row-table {
+        /* ===== META: right aligned small table under title ===== */
+        .meta-table {
             width: 100%;
             border-collapse: collapse;
+            font-size: 6.4pt;
+            color: #444;
+            margin-bottom: 7px;
         }
 
-        .meta-row-table td {
-            width: 50%;
+        .meta-table td {
             padding: 0;
-            vertical-align: top;
         }
 
-        .meta-right {
+        .meta-table .right {
             text-align: right;
         }
 
-        .section-banner {
-            font-size: 7.25pt;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            background: #eef0fb;
-            border: 1px solid #c5cae9;
-            border-bottom: none;
-            padding: 5px 8px;
-            margin: 6px 0 0 0;
-            color: #1a237e;
-            text-align: center;
+        .meta-table strong {
+            color: #14532d;
         }
 
-        .data-table {
+        /* ===== OPENING DECLARATION (moved to top, before data) ===== */
+        .declaration {
+            background: #f3f6f3;
+            border-left: 3px solid #14532d;
+            padding: 6px 9px;
+            margin-bottom: 9px;
+            font-size: 6.9pt;
+            line-height: 1.4;
+        }
+
+        .declaration .lang-tag {
+            display: inline-block;
+            font-size: 5.7pt;
+            font-weight: bold;
+            color: #14532d;
+            border: 1px solid #14532d;
+            border-radius: 2px;
+            padding: 0 4px;
+            margin-bottom: 3px;
+        }
+
+        .declaration p {
+            margin: 0 0 5px 0;
+            text-align: justify;
+        }
+
+        .declaration p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== SECTION LABELS: underline tab style ===== */
+        .section-tag {
+            font-size: 7pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #14532d;
+            border-bottom: 2px solid #14532d;
+            padding-bottom: 2px;
+            margin: 8px 0 4px 0;
+        }
+
+        /* ===== FIELD TABLE: single-line label:value, zebra striping, no borders ===== */
+        .field-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 6.85pt;
-            margin-bottom: 5px;
+            font-size: 6.8pt;
+            margin-bottom: 4px;
             table-layout: fixed;
         }
 
-        .data-table td {
-            border: 1px solid #ccc;
-            padding: 4px 7px;
-            vertical-align: top;
+        .field-table tr:nth-child(odd) {
+            background: #f3f6f3;
+        }
+
+        .field-table td {
+            padding: 3.5px 7px;
+            vertical-align: middle;
             width: 50%;
         }
 
-        .field-label {
-            font-weight: normal;
-            color: #333;
-            line-height: 1.3;
-            margin: 0 0 2px 0;
+        .field-table .k {
+            color: #666;
         }
 
-        .field-value {
+        .field-table .v {
             font-weight: bold;
             color: #111;
-            line-height: 1.3;
-            margin: 0;
         }
 
-        .body-columns {
+        /* ===== SIGNATURE: inline, left-aligned, part of content flow ===== */
+        .sig-inline {
             width: 100%;
             border-collapse: collapse;
-            margin: 5px 0 2px 0;
-            font-size: 7pt;
-            line-height: 1.32;
+            margin: 10px 0 2px 0;
         }
 
-        .body-columns td {
-            width: 50%;
+        .sig-inline td {
             vertical-align: top;
-            padding: 3px 8px 3px 0;
-            text-align: justify;
-            border: none;
-        }
-
-        .body-columns td.en-col {
-            padding: 3px 0 3px 8px;
-            border-left: 1px solid #ddd;
-        }
-
-        .body-columns p {
-            margin: 0 0 2px 0;
-        }
-
-        .signature-block {
-            margin-top: 0;
-            margin-bottom: 4px;
-            text-align: right;
-        }
-
-        .signature-inner {
-            margin-left: auto;
-            border-collapse: collapse;
-        }
-
-        .signature-inner td {
-            vertical-align: bottom;
             padding: 0;
         }
 
         .sig-graphic-wrap {
             position: relative;
             min-height: 34px;
-            margin-bottom: 2px;
-            text-align: right;
-        }
-
-        .sig-handwritten {
-            display: block;
-            margin-left: auto;
-            width: 155px;
-            height: auto;
-            max-height: 48px;
-            object-fit: contain;
+            text-align: left;
         }
 
         .sig-stamp-overlay {
             position: absolute;
-            right: 88px;
+            left: 88px;
             bottom: -4px;
             width: 52px;
             height: auto;
@@ -250,131 +242,109 @@
         }
 
         .e-sign-box {
-            border: 1px solid #333;
-            padding: 5px 9px;
-            text-align: center;
+            border-top: 2px solid #14532d;
+            padding: 5px 0 0 0;
+            text-align: left;
             line-height: 1.3;
-            min-width: 168px;
+            max-width: 190px;
             font-size: 6.65pt;
-            background: #fafafa;
         }
 
         .e-sign-badge {
             font-weight: bold;
-            font-size: 6.6pt;
+            font-size: 6.4pt;
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            color: #1a237e;
-            margin-bottom: 5px;
-            padding-bottom: 4px;
-            border-bottom: 1px solid #ccc;
+            color: #14532d;
+            margin-bottom: 4px;
         }
 
         .e-sign-name {
             font-weight: bold;
             color: #111;
             font-size: 7pt;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
         .e-sign-title {
-            font-size: 6.35pt;
-            color: #333;
-            letter-spacing: 0.02em;
+            font-size: 6.3pt;
+            color: #444;
             line-height: 1.3;
         }
 
-        .verification-wrap {
-            border: 1px solid #bbb;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-size: 6.15pt;
-            background: #fafafa;
+        /* ===== VERIFICATION BAND: inverted dark strip, fixed at page bottom ===== */
+        .verify-band {
+            background: #14532d;
+            color: #fff;
+            padding: 5px 10px;
         }
 
-        .verification-header {
-            background: #eef0fb;
-            border-bottom: 1px solid #c5cae9;
-            padding: 4px 8px;
-            font-size: 6.3pt;
+        .verify-band-header {
+            font-size: 6.2pt;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 0.03em;
-            color: #1a237e;
-            text-align: center;
+            letter-spacing: 0.04em;
+            margin-bottom: 3px;
+            color: #e8f0e8;
         }
 
-        .verification-body {
+        .verify-table {
             width: 100%;
             border-collapse: collapse;
-            background: #fff;
         }
 
-        .verification-body td {
-            vertical-align: top;
-            padding: 5px 6px;
+        .verify-table td {
+            vertical-align: middle;
+            padding: 0;
         }
 
-        .verification-body .qr-cell {
-            width: 62px;
-            border-right: 1px solid #ddd;
-            text-align: center;
-        }
-
-        .verification-body .qr-cell img {
-            width: 48px;
-            height: 48px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .verification-body .text-cell {
-            width: auto;
-            border-right: 1px solid #ddd;
+        .verify-table .text-cell {
             font-size: 5.9pt;
-            line-height: 1.35;
-            color: #333;
-            text-align: justify;
-        }
-
-        .verification-body .code-cell {
-            width: 32%;
-            font-size: 6pt;
             line-height: 1.4;
+            color: #eef3ee;
+            text-align: left;
         }
 
-        .verification-info-text {
-            font-size: 5.9pt;
-            line-height: 1.35;
-            color: #333;
-            margin-bottom: 5px;
-            text-align: justify;
+        .verify-table .text-cell strong {
+            color: #fff;
         }
 
-        .verification-info-text p {
-            margin: 0 0 4px 0;
+        .verify-table .code-cell {
+            width: 30%;
+            font-size: 5.8pt;
+            padding-left: 8px;
+            border-left: 1px solid #3f7350;
         }
 
-        .verification-info-text p:last-child {
-            margin-bottom: 0;
+        .verify-table .qr-cell {
+            width: 44px;
+            text-align: center;
+            padding-left: 8px;
+        }
+
+        .verify-table .qr-cell img {
+            width: 40px;
+            height: 40px;
+            display: block;
+            background: #fff;
+            padding: 2px;
         }
 
         .verification-url {
             word-break: break-all;
             font-family: 'DejaVu Sans Mono', monospace;
-            font-size: 5.4pt;
-            color: #1a237e;
+            font-size: 5.3pt;
+            color: #cfe8d4;
         }
 
         .footer-line {
             text-align: center;
-            font-size: 6.2pt;
-            color: #444;
-            margin: 3px 0 0 0;
-            padding-top: 3px;
-            border-top: 1px solid #ddd;
+            font-size: 5.9pt;
+            color: #fff;
+            background: #0e3d20;
+            margin: 0;
+            padding: 3px 0;
             line-height: 1.25;
-            background: #fff;
         }
 
         @media print {
@@ -386,8 +356,6 @@
 </head>
 
 <body>
-
-    <div class="page-content">
 
     @php
         $program = $student->application?->program;
@@ -441,184 +409,10 @@
                     ? 'Kobieta / Female'
                     : ucfirst($student->gender)))
             : 'N/A';
-    @endphp
 
-    {{-- Header (Biuro Spraw Studenckich / Student Affairs Office) --}}
-    <table class="header-table">
-        <tr>
-            <td style="width: 55%;">
-                <div class="uni-pl navy">UNIWERSYTET KIELCE</div>
-                <div class="uni-en navy">KIELCE UNIVERSITY</div>
-                <p class="uni-sub">Biuro Spraw Studenckich / Student Affairs Office</p>
-            </td>
-            <td style="width: 45%;">
-                <div class="contact-block">
-                    <div>Tel: +48 73 947 16 22</div>
-                    <div>KIELCE, Poland</div>
-                    <div>E-mail: admission@kielceuniversity.pl</div>
-                </div>
-            </td>
-        </tr>
-    </table>
-
-    <hr class="rule" />
-
-    <div class="doc-title navy">
-        <p class="pl">Zaświadczenie o statusie studenta</p>
-        <p class="en">Certificate of Student Status</p>
-    </div>
-
-    <table class="meta-row-table meta-row">
-        <tr>
-            <td>
-                <strong>Nr dokumentu / Document Number:</strong>
-                {{ $student->application_number ?? now()->format('d/m/Y') }}/{{ str_pad($student->id, 3, '0', STR_PAD_LEFT) }}
-            </td>
-            <td class="meta-right">
-                <strong>Data wydania / Date of Issue:</strong> {{ now()->format('d.m.Y') }}
-            </td>
-        </tr>
-    </table>
-
-    <div class="section-banner">Dane studenta / Student Information</div>
-    <table class="data-table">
-        <tr>
-            <td>
-                <div class="field-label">Imię i nazwisko / Full Name:</div>
-                <div class="field-value">{{ tr_upper($student->first_name) }} {{ tr_upper($student->last_name) }}</div>
-            </td>
-            <td>
-                <div class="field-label">Imię ojca / Father's Name:</div>
-                <div class="field-value">{{ tr_upper($student->father_name ?? 'N/A') }}</div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="field-label">Data urodzenia / Date of Birth:</div>
-                <div class="field-value">
-                    {{ $student->date_of_birth ? $student->date_of_birth->format('d.m.Y') : 'N/A' }}</div>
-            </td>
-            <td>
-                <div class="field-label">Płeć / Gender:</div>
-                <div class="field-value">{{ $genderDisplay }}</div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="field-label">Miejsce urodzenia / Place of Birth:</div>
-                <div class="field-value">{{ $placeOfBirthDisplay }}</div>
-            </td>
-            <td>
-                <div class="field-label">Numer albumu / Student ID Number:</div>
-                <div class="field-value">{{ $student->student_number ?? 'N/A' }}</div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="field-label">Obywatelstwo / Nationality:</div>
-                <div class="field-value">{{ $nationalityDisplay }}</div>
-            </td>
-            <td>
-                <div class="field-label">Adres e-mail / E-mail Address:</div>
-                <div class="field-value">{{ $student->email ?? 'N/A' }}</div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="field-label">Numer dokumentu / Passport Number:</div>
-                <div class="field-value">{{ $student->passport_number ?? 'N/A' }}</div>
-            </td>
-            <td>
-                <div class="field-label">Numer telefonu / Phone Number:</div>
-                <div class="field-value">{{ $student->phone ?? 'N/A' }}</div>
-            </td>
-        </tr>
-    </table>
-
-    <div class="section-banner">Dane programu / Programme Information</div>
-    <table class="data-table">
-        <tr>
-            <td>
-                <div class="field-label">Kierunek studiów / Study Programme:</div>
-                <div class="field-value">{{ $programNamePl }} / {{ $programNameEn }}</div>
-            </td>
-            <td>
-                <div class="field-label">Wydział / Faculty:</div>
-                <div class="field-value">{{ $facultyNamePl }} / {{ $facultyNameEn }}</div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="field-label">Poziom studiów / Degree Level:</div>
-                <div class="field-value">{{ $degreeNamePl }} / {{ $degreeNameEn }}</div>
-            </td>
-            <td>
-                <div class="field-label">Rok studiów / Year of Study:</div>
-                <div class="field-value">{{ $classYear }}</div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="field-label">Forma studiów / Mode of Study:</div>
-                <div class="field-value">{{ $educationTypePl }} / {{ $educationTypeEn }}</div>
-            </td>
-            <td>
-                <div class="field-label">Przewidywany rok ukończenia studiów / Expected Graduation:</div>
-                <div class="field-value">{{ $startYear }}/{{ $endYear }}</div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="field-label">Język kształcenia / Language of Instruction:</div>
-                <div class="field-value">{{ $studyLangDisplay }}</div>
-            </td>
-            <td>
-                <div class="field-label">Status studenta / Student Status:</div>
-                <div class="field-value">Aktywny / Active</div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="field-label">Forma studiów / Mode of Study:</div>
-                <div class="field-value">Studia stacjonarne
-                    Full-Time Study</div>
-            </td>
-            <td>
-                <div class="field-label">Status stypendium / Scholarship Status:</div>
-                <div class="field-value">{{ $scholarshipPl }} / {{ $scholarshipEn }}</div>
-            </td>
-        </tr>
-    </table>
-
-    @php
         $duration = $degree?->duration ?? 4;
         $durationPl = $duration === 1 ? 'rok' : ($duration < 5 ? 'lata' : 'lat');
-    @endphp
 
-    {{-- Two-column body: PL | EN --}}
-    <table class="body-columns">
-        <tr>
-            <td>
-                <p>Osoba, której dane wskazano powyżej, jest zarejestrowanym studentem naszej uczelni. Przewidywany
-                    czas trwania programu wynosi {{ $duration }} {{ $durationPl }}. Zgodnie z odpowiednimi
-                    przepisami
-                    Regulaminu Studiów, student zobowiązany jest do spełniania wymogów programu. Niniejsze zaświadczenie
-                    wydano na wniosek osoby, której dotyczy. Oczekuje się osiągnięcia etapu ukończenia studiów w roku
-                    akademickim {{ $startYear }}-{{ $endYear }}.</p>
-            </td>
-            <td class="en-col">
-                <p>The person named above is a registered student of our university. The foreseen duration of the
-                    programme is {{ $duration }} years. In accordance with the Study Regulations, the
-                    student must fulfil programme requirements. This certificate is issued upon the request of the
-                    person concerned. Graduation is expected in the {{ $startYear }}-{{ $endYear }} academic
-                    year.</p>
-            </td>
-        </tr>
-    </table>
-
-    </div>{{-- .page-content --}}
-
-    @php
         $stampPath = public_path('images/kielce-möhür.png');
         $stampData = file_exists($stampPath) ? base64_encode(file_get_contents($stampPath)) : '';
 
@@ -631,36 +425,130 @@
         $qrCodeBase64 = base64_encode($qrCode);
     @endphp
 
-    <div class="page-bottom-fixed">
-        <div class="signature-block">
-            <table class="signature-inner" align="right">
-                <tr>
-                    <td>
-                        <div class="sig-graphic-wrap">
-                            @if ($stampData)
-                                <img class="sig-stamp-overlay" src="data:image/png;base64,{{ $stampData }}"
-                                    alt="">
-                            @endif
-                        </div>
-                        <div class="e-sign-box">
-                            <div class="e-sign-badge">Podpis elektroniczny / E-Signed</div>
-                            <div class="e-sign-name">Michał Kowalski</div>
-                            <div class="e-sign-title">Dyrektor Działu Spraw Studenckich / Director of Student Affairs</div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
+    <div class="page-content">
+    <div class="outer-frame">
 
-        <div class="verification-wrap">
-            <div class="verification-header">
-                Weryfikacja autentyczności dokumentu / Document Verification
-            </div>
-            <table class="verification-body">
+    {{-- Header (Biuro Spraw Studenckich / Student Affairs Office) --}}
+    <div class="letterhead">
+        <div class="uni-pl">UNIWERSYTET KIELCE</div>
+        <div class="uni-en">Kielce University</div>
+        <p class="uni-sub">Biuro Spraw Studenckich / Student Affairs Office</p>
+        <div class="contact-strip">
+            <span><span class="lbl">Tel:</span> +48 73 947 16 22</span>|
+            <span><span class="lbl">KIELCE, Poland</span></span>|
+            <span><span class="lbl">E-mail:</span> admission@kielceuniversity.pl</span>
+        </div>
+    </div>
+
+    <div class="doc-title">
+        <p class="pl">Zaświadczenie o statusie studenta</p>
+        <p class="en">Certificate of Student Status</p>
+    </div>
+
+    <table class="meta-table">
+        <tr>
+            <td>
+                <strong>Nr dokumentu / Document Number:</strong>
+                {{ $student->application_number ?? now()->format('d/m/Y') }}/{{ str_pad($student->id, 3, '0', STR_PAD_LEFT) }}
+            </td>
+            <td class="right">
+                <strong>Data wydania / Date of Issue:</strong> {{ now()->format('d.m.Y') }}
+            </td>
+        </tr>
+    </table>
+
+    {{-- Opening declaration moved to the top, above the data sections --}}
+    <div class="declaration">
+        <span class="lang-tag">PL</span>
+        <p>Osoba, której dane wskazano powyżej, jest zarejestrowanym studentem naszej uczelni. Przewidywany
+            czas trwania programu wynosi {{ $duration }} {{ $durationPl }}. Zgodnie z odpowiednimi
+            przepisami
+            Regulaminu Studiów, student zobowiązany jest do spełniania wymogów programu. Niniejsze zaświadczenie
+            wydano na wniosek osoby, której dotyczy. Oczekuje się osiągnięcia etapu ukończenia studiów w roku
+            akademickim {{ $startYear }}-{{ $endYear }}.</p>
+
+        <span class="lang-tag">EN</span>
+        <p>The person named above is a registered student of our university. The foreseen duration of the
+            programme is {{ $duration }} years. In accordance with the Study Regulations, the
+            student must fulfil programme requirements. This certificate is issued upon the request of the
+            person concerned. Graduation is expected in the {{ $startYear }}-{{ $endYear }} academic
+            year.</p>
+    </div>
+
+    <div class="section-tag">Dane studenta / Student Information</div>
+    <table class="field-table">
+        <tr>
+            <td><span class="k">Imię i nazwisko / Full Name:</span> <span class="v">{{ tr_upper($student->first_name) }} {{ tr_upper($student->last_name) }}</span></td>
+            <td><span class="k">Imię ojca / Father's Name:</span> <span class="v">{{ tr_upper($student->father_name ?? 'N/A') }}</span></td>
+        </tr>
+        <tr>
+            <td><span class="k">Data urodzenia / Date of Birth:</span> <span class="v">{{ $student->date_of_birth ? $student->date_of_birth->format('d.m.Y') : 'N/A' }}</span></td>
+            <td><span class="k">Płeć / Gender:</span> <span class="v">{{ $genderDisplay }}</span></td>
+        </tr>
+        <tr>
+            <td><span class="k">Miejsce urodzenia / Place of Birth:</span> <span class="v">{{ $placeOfBirthDisplay }}</span></td>
+            <td><span class="k">Numer albumu / Student ID Number:</span> <span class="v">{{ $student->student_number ?? 'N/A' }}</span></td>
+        </tr>
+        <tr>
+            <td><span class="k">Obywatelstwo / Nationality:</span> <span class="v">{{ $nationalityDisplay }}</span></td>
+            <td><span class="k">Adres e-mail / E-mail Address:</span> <span class="v">{{ $student->email ?? 'N/A' }}</span></td>
+        </tr>
+        <tr>
+            <td><span class="k">Numer dokumentu / Passport Number:</span> <span class="v">{{ $student->passport_number ?? 'N/A' }}</span></td>
+            <td><span class="k">Numer telefonu / Phone Number:</span> <span class="v">{{ $student->phone ?? 'N/A' }}</span></td>
+        </tr>
+    </table>
+
+    <div class="section-tag">Dane programu / Programme Information</div>
+    <table class="field-table">
+        <tr>
+            <td><span class="k">Kierunek studiów / Study Programme:</span> <span class="v">{{ $programNamePl }} / {{ $programNameEn }}</span></td>
+            <td><span class="k">Wydział / Faculty:</span> <span class="v">{{ $facultyNamePl }} / {{ $facultyNameEn }}</span></td>
+        </tr>
+        <tr>
+            <td><span class="k">Poziom studiów / Degree Level:</span> <span class="v">{{ $degreeNamePl }} / {{ $degreeNameEn }}</span></td>
+            <td><span class="k">Rok studiów / Year of Study:</span> <span class="v">{{ $classYear }}</span></td>
+        </tr>
+        <tr>
+            <td><span class="k">Forma studiów / Mode of Study:</span> <span class="v">{{ $educationTypePl }} / {{ $educationTypeEn }}</span></td>
+            <td><span class="k">Przewidywany rok ukończenia studiów / Expected Graduation:</span> <span class="v">{{ $startYear }}/{{ $endYear }}</span></td>
+        </tr>
+        <tr>
+            <td><span class="k">Język kształcenia / Language of Instruction:</span> <span class="v">{{ $studyLangDisplay }}</span></td>
+            <td><span class="k">Status studenta / Student Status:</span> <span class="v">Aktywny / Active</span></td>
+        </tr>
+        <tr>
+            <td><span class="k">Forma studiów / Mode of Study:</span> <span class="v">Studia stacjonarne Full-Time Study</span></td>
+            <td><span class="k">Status stypendium / Scholarship Status:</span> <span class="v">{{ $scholarshipPl }} / {{ $scholarshipEn }}</span></td>
+        </tr>
+    </table>
+
+    {{-- Signature: inline within the content flow, not pinned to the page bottom --}}
+    <table class="sig-inline">
+        <tr>
+            <td>
+                <div class="sig-graphic-wrap">
+                    @if ($stampData)
+                        <img class="sig-stamp-overlay" src="data:image/png;base64,{{ $stampData }}" alt="">
+                    @endif
+                </div>
+                <div class="e-sign-box">
+                    <div class="e-sign-badge">Podpis elektroniczny / E-Signed</div>
+                    <div class="e-sign-name">Michał Kowalski</div>
+                    <div class="e-sign-title">Dyrektor Działu Spraw Studenckich / Director of Student Affairs</div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    </div>{{-- .outer-frame --}}
+    </div>{{-- .page-content --}}
+
+    <div class="page-bottom-fixed">
+        <div class="verify-band">
+            <div class="verify-band-header">Weryfikacja autentyczności dokumentu / Document Verification</div>
+            <table class="verify-table">
                 <tr>
-                    <td class="qr-cell">
-                        <img src="data:image/svg+xml;base64,{{ $qrCodeBase64 }}" alt="" />
-                    </td>
                     <td class="text-cell">
                         Zeskanuj kod QR lub otwórz link weryfikacyjny, aby potwierdzić autentyczność niniejszego dokumentu.
                         Po wyświetleniu monitu wpisz 4-cyfrowy kod: <strong>{{ $codeForEntry }}</strong><br />
@@ -670,13 +558,14 @@
                     <td class="code-cell">
                         <div class="verification-url">{{ $verificationUrl }}</div>
                     </td>
+                    <td class="qr-cell">
+                        <img src="data:image/svg+xml;base64,{{ $qrCodeBase64 }}" alt="" />
+                    </td>
                 </tr>
             </table>
         </div>
-
         <div class="footer-line">
-            KIELCE, Poland &nbsp;|&nbsp; Tel: +48 73 947 16 22 &nbsp;|&nbsp; E-mail:
-            admission@kielceuniversity.pl
+            KIELCE, Poland &nbsp;|&nbsp; Tel: +48 73 947 16 22 &nbsp;|&nbsp; E-mail: admission@kielceuniversity.pl
         </div>
     </div>
 

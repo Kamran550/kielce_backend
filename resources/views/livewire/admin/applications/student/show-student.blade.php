@@ -240,7 +240,7 @@
             class="flex flex-nowrap items-start sm:items-center justify-between gap-3 w-full pt-1 border-t border-gray-100">
             <div class="flex flex-wrap items-center gap-2 flex-1 min-w-0">
             @if ($application && $application->applicant_type === \App\Enums\ApplicationTypeEnum::STUDENT->value)
-                <button type="button" wire:click="sendAcceptanceLetter" wire:loading.attr="disabled"
+                {{-- <button type="button" wire:click="sendAcceptanceLetter" wire:loading.attr="disabled"
                     wire:target="sendAcceptanceLetter"
                     class="inline-flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-[#6E0C0C] hover:bg-[#8B2525] rounded-md transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
                     title="Send Conditional Acceptance Letter">
@@ -259,7 +259,7 @@
                     </svg>
                     <span wire:loading.remove wire:target="sendAcceptanceLetter">75% CAL</span>
                     <span wire:loading wire:target="sendAcceptanceLetter">Sending...</span>
-                </button>
+                </button> --}}
 
                 <button type="button" wire:click="sendAcceptanceLetterBilingualEnPl" wire:loading.attr="disabled"
                     wire:target="sendAcceptanceLetterBilingualEnPl"

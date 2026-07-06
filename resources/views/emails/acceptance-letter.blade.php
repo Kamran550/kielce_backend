@@ -35,7 +35,7 @@
 
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #666;">
             <p>Best regards,<br>
-            <strong>KIELC</strong><br>
+            <strong>KIELCE</strong><br>
             Acceptance Committee</p>
         </div>
     </div>

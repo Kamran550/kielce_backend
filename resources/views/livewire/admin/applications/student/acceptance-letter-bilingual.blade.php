@@ -20,14 +20,14 @@
             font-family: 'DejaVu Sans', Helvetica, Arial, sans-serif;
             font-size: 7.25pt;
             line-height: 1.34;
-            color: #111;
+            color: #1c1c1c;
             margin: 0;
             padding: 0;
             background: #fff;
         }
 
         .navy {
-            color: #1a237e;
+            color: #14532d;
         }
 
         .header-table {
@@ -45,7 +45,7 @@
             font-family: 'DejaVu Serif', Georgia, serif;
             font-size: 12pt;
             font-weight: bold;
-            color: #1a237e;
+            color: #14532d;
             margin: 0;
             line-height: 1.1;
         }
@@ -54,13 +54,13 @@
             font-family: 'DejaVu Sans', sans-serif;
             font-size: 9.5pt;
             font-weight: bold;
-            color: #1a237e;
+            color: #14532d;
             margin: 2px 0 0 0;
         }
 
         .uni-sub {
             font-size: 6.5pt;
-            color: #333;
+            color: #444;
             margin: 3px 0 0 0;
             line-height: 1.25;
         }
@@ -69,12 +69,12 @@
             text-align: right;
             font-size: 6.75pt;
             line-height: 1.4;
-            color: #222;
+            color: #333;
         }
 
         .rule {
             border: none;
-            border-top: 1px solid #bbb;
+            border-top: 1px solid #cfd8cf;
             margin: 6px 0 8px 0;
         }
 
@@ -88,7 +88,7 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            color: #1a237e;
+            color: #14532d;
             margin: 0;
         }
 
@@ -97,7 +97,7 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            color: #1a237e;
+            color: #14532d;
             margin: 2px 0 0 0;
         }
 
@@ -118,6 +118,10 @@
             vertical-align: top;
         }
 
+        .meta-row-table strong {
+            color: #14532d;
+        }
+
         .meta-right {
             text-align: right;
         }
@@ -134,14 +138,14 @@
             margin: 0 0 4px 0;
             text-align: justify;
             font-style: italic;
-            color: #222;
+            color: #333;
         }
 
         .intro-en {
             margin: 0 0 10px 0;
             text-align: justify;
             font-style: italic;
-            color: #222;
+            color: #333;
         }
 
         .section-heading {
@@ -151,8 +155,8 @@
             letter-spacing: 0.02em;
             margin: 9px 0 4px 0;
             padding-bottom: 3px;
-            border-bottom: 1px solid #999;
-            color: #000;
+            border-bottom: 2px solid #14532d;
+            color: #14532d;
         }
 
         .data-table {
@@ -163,7 +167,7 @@
         }
 
         .data-table td {
-            border: 1px solid #ccc;
+            border: 1px solid #cfd8cf;
             padding: 4px 6px;
             vertical-align: top;
         }
@@ -171,8 +175,8 @@
         .data-table td.label {
             font-weight: bold;
             width: 42%;
-            background: #f5f5f5;
-            color: #111;
+            background: #f3f6f3;
+            color: #14532d;
         }
 
         .conditions-intro-row td {
@@ -209,12 +213,14 @@
         }
 
         .highlight-box {
-            border: 1px solid #999;
+            border: 1px solid #14532d;
+            background: #f3f6f3;
             padding: 6px 8px;
             text-align: center;
             font-size: 7pt;
             margin: 8px 0 12px 0;
             line-height: 1.32;
+            color: #14532d;
         }
 
         .footer-three {
@@ -232,14 +238,14 @@
         }
 
         .e-sign-box {
-            border: 1px solid #333;
+            border: 1px solid #14532d;
             padding: 8px 12px;
             margin-top: 14px;
             text-align: center;
             line-height: 1.35;
             min-width: 168px;
             font-size: 6.75pt;
-            background: #fafafa;
+            background: #f3f6f3;
         }
 
         .e-sign-badge {
@@ -247,10 +253,10 @@
             font-size: 6.85pt;
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            color: #1a237e;
+            color: #14532d;
             margin-bottom: 6px;
             padding-bottom: 5px;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #cfd8cf;
         }
 
         .e-sign-name {
@@ -269,7 +275,7 @@
             width: 58px;
             height: 58px;
             margin: 0 auto;
-            border: 2px dashed #999;
+            border: 2px dashed #7a9a82;
             border-radius: 50%;
             text-align: center;
             font-size: 6pt;
@@ -279,9 +285,11 @@
         }
 
         .verification-box {
-            border: 1px solid #999;
+            border: 1px solid #14532d;
             padding: 5px 6px;
             font-size: 6.5pt;
+            background: #14532d;
+            color: #fff;
         }
 
         .verification-box h4 {
@@ -290,6 +298,7 @@
             text-transform: uppercase;
             letter-spacing: 0.02em;
             text-align: center;
+            color: #e8f0e8;
         }
 
         .verification-inner {
@@ -307,11 +316,21 @@
             padding-right: 6px;
         }
 
+        .verification-inner .qr-cell img {
+            background: #fff;
+            padding: 2px;
+        }
+
+        .verification-inner strong {
+            color: #fff;
+        }
+
         .verification-url {
             word-break: break-all;
             font-family: 'DejaVu Sans Mono', monospace;
             font-size: 5.75pt;
             margin-top: 3px;
+            color: #cfe8d4;
         }
 
         .doc-note {
@@ -320,7 +339,7 @@
             color: #444;
             margin-top: 6px;
             padding-top: 5px;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #cfd8cf;
             line-height: 1.3;
         }
 

@@ -17,7 +17,7 @@
             font-family: 'DejaVu Sans', Arial, sans-serif;
             font-size: 8.6pt;
             line-height: 1.38;
-            color: #1f2937;
+            color: #1c1c1c;
             padding-bottom: 46mm;
         }
 
@@ -27,7 +27,7 @@
 
         .top-band {
             height: 5px;
-            background: #7c2d12;
+            background: #14532d;
             margin-bottom: 8px;
         }
 
@@ -58,7 +58,7 @@
             font-size: 15pt;
             font-weight: bold;
             letter-spacing: 0.5px;
-            color: #0f172a;
+            color: #14532d;
             line-height: 1;
         }
 
@@ -73,8 +73,8 @@
         .hero {
             margin-top: 6px;
             margin-bottom: 12px;
-            border-top: 1px solid #cbd5e1;
-            border-bottom: 1px solid #cbd5e1;
+            border-top: 1px solid #cfd8cf;
+            border-bottom: 1px solid #cfd8cf;
             padding: 10px 0;
         }
 
@@ -82,7 +82,7 @@
             font-size: 18pt;
             font-weight: bold;
             text-transform: uppercase;
-            color: #111827;
+            color: #14532d;
             margin: 0 0 4px 0;
             letter-spacing: 1px;
         }
@@ -155,9 +155,9 @@
         }
 
         .card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-left: 4px solid #1d4ed8;
+            background: #f3f6f3;
+            border: 1px solid #cfd8cf;
+            border-left: 4px solid #14532d;
             padding: 9px 10px;
             margin-bottom: 10px;
         }
@@ -167,7 +167,7 @@
             font-size: 8pt;
             font-weight: bold;
             text-transform: uppercase;
-            color: #1e3a8a;
+            color: #14532d;
             letter-spacing: 0.4px;
         }
 
@@ -219,7 +219,7 @@
             z-index: 1;
             font-size: 8.2pt;
             font-weight: bold;
-            color: #0f172a;
+            color: #14532d;
         }
 
         .sign-title {
@@ -235,16 +235,17 @@
             left: 12mm;
             right: 12mm;
             bottom: 0;
-            padding-top: 8px;
-            border-top: 1px solid #cbd5e1;
+            padding: 8px 10px;
+            border-top: 1px solid #cfd8cf;
             font-size: 7.2pt;
-            background: #fff;
+            background: #14532d;
+            color: #eef3ee;
         }
 
         .verify-title {
             margin: 0 0 4px 0;
             font-weight: bold;
-            color: #0f172a;
+            color: #fff;
         }
 
         .verify-url {
@@ -252,6 +253,7 @@
             font-family: 'DejaVu Sans Mono', 'Courier New', monospace;
             font-size: 6.4pt;
             word-break: break-all;
+            color: #cfe8d4;
         }
 
         .verify-left,
@@ -264,12 +266,21 @@
             width: 70px;
         }
 
+        .verify-left img {
+            background: #fff;
+            padding: 2px;
+        }
+
         .verify-right {
             width: 82%;
             font-size: 7pt;
             line-height: 1.35;
             text-align: justify;
-            color: #334155;
+            color: #eef3ee;
+        }
+
+        .verify-right strong {
+            color: #fff;
         }
 
         .verify-code {
@@ -281,7 +292,7 @@
             margin-top: 7px;
             font-size: 5.8pt;
             text-align: center;
-            color: #64748b;
+            color: #cfe8d4;
             line-height: 1.25;
         }
 
