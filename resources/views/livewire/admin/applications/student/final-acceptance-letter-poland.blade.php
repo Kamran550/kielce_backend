@@ -121,6 +121,59 @@
             margin: 3px 0 0 0;
         }
 
+        /* ===== PROFILE PHOTO (added) ===== */
+        .title-row-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2px 0 6px 0;
+        }
+
+        .title-row-table td {
+            padding: 0;
+            border: none;
+        }
+
+        .title-row-table td.title-cell {
+            width: 80%;
+            vertical-align: middle;
+        }
+
+        .title-row-table td.title-cell .doc-title {
+            margin: 0;
+        }
+
+        .title-row-table td.photo-cell {
+            width: 20%;
+            text-align: right;
+            vertical-align: top;
+        }
+
+        .photo-box {
+            width: 16mm;
+            height: 20mm;
+            border: 1px solid #14532d;
+            padding: 1px;
+            margin-left: auto;
+            background: #fff;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 5.3pt;
+            color: #999;
+            border: 1px dashed #ccc;
+            padding-top: 8px;
+        }
+
         /* ===== META: right aligned small table under title ===== */
         .meta-table {
             width: 100%;
@@ -423,6 +476,29 @@
         $codeForEntry = isset($digitCode) && $digitCode !== null ? trim((string) $digitCode) : '—';
         $qrCode = \SimpleSoftwareIO\QrCode\Facades\QrCode::format('svg')->size(48)->generate($verificationUrl);
         $qrCodeBase64 = base64_encode($qrCode);
+
+        // --- Profile photo (added) ---
+        $photoData = null;
+        $photoMime = 'image/jpeg';
+
+        if ($student->profile_photo_path && Storage::exists($student->profile_photo_path)) {
+            try {
+                $photoContent = Storage::get($student->profile_photo_path);
+                if ($photoContent) {
+                    $photoData = base64_encode($photoContent);
+                    $extension = strtolower(pathinfo($student->profile_photo_path, PATHINFO_EXTENSION));
+                    $photoMime = match ($extension) {
+                        'jpg', 'jpeg' => 'image/jpeg',
+                        'png' => 'image/png',
+                        'gif' => 'image/gif',
+                        'webp' => 'image/webp',
+                        default => 'image/jpeg',
+                    };
+                }
+            } catch (\Exception $e) {
+                $photoData = null;
+            }
+        }
     @endphp
 
     <div class="page-content">
@@ -440,10 +516,26 @@
         </div>
     </div>
 
-    <div class="doc-title">
-        <p class="pl">Zaświadczenie o statusie studenta</p>
-        <p class="en">Certificate of Student Status</p>
-    </div>
+    {{-- Title row: PL/EN title on the left, profile photo on the right (added) --}}
+    <table class="title-row-table">
+        <tr>
+            <td class="title-cell">
+                <div class="doc-title">
+                    <p class="pl">Zaświadczenie o statusie studenta</p>
+                    <p class="en">Certificate of Student Status</p>
+                </div>
+            </td>
+            <td class="photo-cell">
+                <div class="photo-box">
+                    @if ($photoData)
+                        <img src="data:{{ $photoMime }};base64,{{ $photoData }}" alt="">
+                    @else
+                        <div class="photo-placeholder">Foto<br>N/A</div>
+                    @endif
+                </div>
+            </td>
+        </tr>
+    </table>
 
     <table class="meta-table">
         <tr>
