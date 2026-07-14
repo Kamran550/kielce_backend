@@ -150,8 +150,8 @@
         }
 
         .photo-box {
-            width: 19mm;
-            height: 22mm;
+            width: 25mm;
+            height: 28mm;
             border: none;
             padding: 1px;
             margin-left: auto;
