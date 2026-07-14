@@ -126,6 +126,7 @@
             width: 100%;
             border-collapse: collapse;
             margin: 2px 0 6px 0;
+            border: none;
         }
 
         .title-row-table td {
@@ -149,9 +150,9 @@
         }
 
         .photo-box {
-            width: 16mm;
-            height: 20mm;
-            border: 1px solid #14532d;
+            width: 19mm;
+            height: 22mm;
+            border: none;
             padding: 1px;
             margin-left: auto;
             background: #fff;
