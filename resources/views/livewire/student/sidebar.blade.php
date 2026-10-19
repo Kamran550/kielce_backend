@@ -87,9 +87,8 @@
                         class="w-full flex items-center gap-3 px-3 py-2 text-navy-light hover:bg-navy-hover hover:text-white rounded-lg transition">
                         <!-- Profile Icon -->
                         @if (Auth::user()->profile_photo)
-                            <img src="{{ Storage::disk('do_spaces')->url(Auth::user()->profile_photo) }}"
-                                alt="{{ Auth::user()->name }}"
-                                class="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-gold">
+                            <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}"
+                                class="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-indigo-500">
                         @else
                             <div class="w-10 h-10 bg-brand rounded-full flex items-center justify-center shrink-0">
                                 <span class="text-white font-semibold text-sm">
